@@ -74,14 +74,13 @@ class Coordinator(baseId: String, chatManager: ActorRef) extends Actor with Acto
         var minVal = 20
         var selectedAddr: String = null
         peerNumChatParticipants.foreach(f => {
-          println("Map[" + f._1 + "] = " + f._2.toString)
           if(f._2 < minVal) {
             minVal = f._2
             selectedAddr = f._1
           }
         })
       
-        if(minVal > 10) {
+        if(minVal >= 10) {
           chatManager ! CmdReply("System", "The limit of maximum chat participants is reached.") 
         } else if(selectedAddr == null) {
           chatManager ! CmdAddChatParticipant
