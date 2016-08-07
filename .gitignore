@@ -1,0 +1,21 @@
+# SBT
+boot/
+lib_managed/
+target/
+.history
+
+# Eclipse
+.cache
+.classpath
+.project
+.scala_dependencies
+.settings
+.target/
+
+# TextMate
+*.tmproj
+
+.cache-main
+bin/
+*.class
+*.log
